@@ -17,6 +17,7 @@ class ClientError(BaseException):
 
 
 def format_request_for_github(cursor=None):
+    print(f"ORG REPO {ORG_NAME} {REPOSITORY_NAME}")
     after = ""
     if cursor:
         after = f', after: "{cursor}"'

@@ -166,9 +166,12 @@ def cli(
             pr_list, include_hotfixes, exclude_user_list, filter_user_list
         )
     elif metric == "pr_size":
-        call_pr_size_statistics(
-            pr_list, include_hotfixes, exclude_user_list, filter_user_list
-        )
+        try:
+            call_pr_size_statistics(
+                pr_list, include_hotfixes, exclude_user_list, filter_user_list
+            )
+        except Exception as e:
+            print("Could not calculate call_pr_size_statistics")
     elif metric == "hotfixes_count":
         count_hotfixes(pr_list, exclude_user_list, filter_user_list)
     else:
@@ -179,3 +182,16 @@ def cli(
             filter_user_list,
             exclude_weekends,
         )
+
+
+if __name__ == '__main__':
+    # print(metric)
+    cli()
+    # start_date,
+    # end_date,
+    # include_hotfixes,
+    # exclude_authors,
+    # filter_authors,
+    # exclude_weekends,
+    # setup,
+    # cli()

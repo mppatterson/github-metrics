@@ -52,6 +52,15 @@ def call_all_metrics(
         exclude_authors=exclude_authors,
         filter_authors=filter_authors,
     )
+    # try:
+        # call_pr_size_statistics(
+        #     pr_list=pr_list,
+        #     include_hotfixes=include_hotfixes,
+        #     exclude_authors=exclude_authors,
+        #     filter_authors=filter_authors,
+        # )
+    # except Exception as e:
+    #     print("Could not call_pr_size_statistics")
     count_hotfixes(
         pr_list=pr_list, exclude_authors=exclude_authors, filter_authors=filter_authors
     )

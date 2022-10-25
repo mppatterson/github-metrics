@@ -39,9 +39,12 @@ def get_pr_size_data(pr_list, include_hotfixes, exclude_authors, filter_authors)
         "total_mean": total_mean,
         "total_median": total_median,
         "total_percentile_95": total_percentile,
+        "total_percentile": total_percentile,
         "rate_mean": rate_mean,
         "rate_median": rate_median,
         "rate_percentile_95": rate_percentile,
+        "rate_percentile": rate_percentile,
+        "formatted_pr_list": formatted_pr_list,
     }
 
 

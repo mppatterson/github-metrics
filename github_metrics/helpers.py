@@ -9,14 +9,15 @@ def is_closed(pr):
 
 def is_release(pr):
     release_in_head_branch_name = "release" in pr["headRefName"].lower()
+    # TODO doesnt really apply
     release_in_title = "release" in pr["title"].lower()
     head_branch_is_master = (
         "master" in pr["headRefName"].lower() or "main" in pr["headRefName"].lower()
     )
-    base_branch_is_production = "production" in pr["baseRefName"].lower()
+    # base_branch_is_production = "production" in pr["baseRefName"].lower()
 
-    if not base_branch_is_production:
-        return False
+    # if not base_branch_is_production:
+    #     return False
 
     return release_in_head_branch_name or head_branch_is_master or release_in_title
 
@@ -26,10 +27,10 @@ def is_hotfix(pr):
         "hotfix/" in pr["headRefName"].lower() or "hf/" in pr["headRefName"].lower()
     )
     hotfix_in_title = "hotfix" in pr["title"].lower()
-    base_branch_is_production = "production" in pr["baseRefName"].lower()
+    # base_branch_is_production = "production" in pr["baseRefName"].lower()
 
-    if not base_branch_is_production:
-        return False
+    # if not base_branch_is_production:
+    #     return False
 
     return hotfix_in_head_branch_name or hotfix_in_title
 
