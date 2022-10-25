@@ -37,3 +37,4 @@ sdist/
 release-backup-*/
 
 py/
+*.txt

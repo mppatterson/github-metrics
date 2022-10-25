@@ -40,6 +40,7 @@ def format_request_for_github(cursor=None):
                 nodes {{
                     id
                     title
+                    url
                     createdAt
                     baseRefName
                     headRefName

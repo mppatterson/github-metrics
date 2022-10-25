@@ -1,4 +1,5 @@
 from github_metrics.metrics.hotfixes_count import count_hotfixes
+from github_metrics.metrics.pr_list import call_pr_list
 from github_metrics.metrics.merge_rate import call_merge_rate_statistics
 from github_metrics.metrics.open_to_merge import (
     calulate_prs_open_to_merge_time_statistics,
@@ -49,6 +50,11 @@ def call_all_metrics(
     call_pr_size_statistics(
         pr_list=pr_list,
         include_hotfixes=include_hotfixes,
+        exclude_authors=exclude_authors,
+        filter_authors=filter_authors,
+    )
+    call_pr_list(
+        pr_list=pr_list,
         exclude_authors=exclude_authors,
         filter_authors=filter_authors,
     )
